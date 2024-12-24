@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Responsive Navbar with Hover Effects</title>
+       
+    <style>
+        
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+}
+
+/* About Section */
+#about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+  background-color: #ffffff;
+  color: #333;
+}
+
+#about h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+#about p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+
+
+ body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding-top: 60px; /* Offset content from fixed navbar */
+}
+
+.navbar {
+  display: flex;
+  padding-top: 50px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #d63f3f;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 100;
+  padding: 0 10px ;
+}
+
+.company-logo {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-logo img {
+  width: 30px;
+  height: 30px;
+}
+
+.company-name {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.menu-icon {
+    display: flex;
+  color: white;
+  font-size: 30px;
+  padding: 5px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Adjust the height of the menu */
+.nav-links {
+   
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 150px;
+  position: absolute;
+  top:0;
+  left: -100%;
+  background-color: rgba(198, 67, 67, 0.587); /* Lighter blue background */
+  width: 100%;
+  height: 50h; /* Set height to full viewport height */
+  flex-direction: column;
+  align-items: center;
+  justify-content:center; /* Align links from the top */
+  transition: left 0.5s ease;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  display: inline;
+  font-size: 20px;
+   margin-top: 5px;
+  padding:  1px 1px;
+  width: 100%; /* Ensure links take full width */
+  opacity: 0;
+  transform: translateX(5px);
+  transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: rgba(245, 243, 231, 0.5); /* Lighter blue on hover */
+    border-radius: 5px;
+    height: 10;
+  
+
+}
+
+.nav-links.open {
+  left: 2;
+}
+
+.nav-links.open a {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+}
+
+.content {
+  margin-top: 60px; /* Offset the content below the fixed navbar */
+  padding: 20px;
+  text-align: center;
+  transition: margin-left 0.5s ease;
+}
+
+
+
+.carousel-item {
+  height: 70vh;
+  background-size: cover;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-position: center;
+}
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+
+.container{
+  text-align: center;
+  padding: 50px;
+}
+
+#about {
+  font-size: 2.5em;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+/* about the company*/
+.company-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            max-width: 16000px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+
+            border-color: #b30000;
+            
+            overflow: hidden;
+            box-shadow: 5px 4px 6px rgba(31, 16, 200, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .company-container:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .image-container {
+            flex: 1;
+            height: 100%;
+            width:80%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content-container {
+            flex: 2;
+            padding: 5px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #efb6b6;
+            transition: background-color 0.3s ease;
+        }
+
+        .company-container:hover .content-container {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .content-container h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .content-container p {
+            margin: 1px 0 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+/* About Section styling */
+.about-section {
+  padding: 30px;
+  border-radius: 10px;
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  z-index: 1000;
+}
+
+/* Hover effects */
+.about-section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: #007bff;
+  color: #fff;
+}
+
+.about-section h2 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.about-section:hover h2 {
+  color: #ffffff;
+}
+
+.about-section p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.about-section p:first-child {
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.about-section:hover p:first-child {
+  color: #ffeb3b;
+}
+
+.about-section:hover p {
+  color: #f1f1f1;
+}
+
+
+
+.container-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.arrow {
+  font-size: 2rem;
+  color: #00796b;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 10px;
+}
+.arrow.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+.service-box {
+  background: white;
+  box-shadow: 0 4px 8px rgba(245, 36, 36, 0.1);
+  border-radius: 8px;
+  margin: 10px;
+  flex: 0 0 auto;
+  width: 260px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.service-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.service-box img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.2s;
+}
+.service-box:hover img {
+  transform: scale(1.1);
+}
+.service-content {
+  padding: 15px;
+}
+.service-content h3 {
+  margin: 0 0 10px;
+  color: #333;
+}
+.service-content p {
+  margin: 0;
+  color: #666;
+}
+
+/* Main Content */
+.content {
+  margin-top: 80px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Contact Us Section */
+#contact {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#contact h2 {
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Footer Section */
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 20px 0;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: left;
+  padding: 20px;
+}
+
+.footer-column {
+  flex: 1 1 30%;
+  margin: 10px;
+}
+
+.footer-column h3 {
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin: 10px 0;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  background-color: rgb(200, 234, 34); /* Blue RGBA */
+  color: #b30000;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .footer-column {
+      flex: 1 1 100%;
+  }
+}
+.footer-column h3 ul addr :hover{
+  background-color: rgb(200, 234, 34); /* Blue RGBA */
+  color: #b30000;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+    </style>
+</head>
+<body>
+
+
+    <div class="navbar">
+        <div class="company-logo">
+            <img src="../assets/Rlogo.png" alt="Company Logo" />
+        </div>
+        <div class="company-name">Rising Innovations</div>
+
+        
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;
+           
+        </div>
+    </div>
+    <div class="nav-links" id="navLinks" >
+        <a href="#">Home</a>
+        <a href="#about5">About</a>
+        <a href="#service">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact">Contact</a>
+    </div>
+   
+
+    <div class="content" id="content">
+
+
+        <h1>Welcome to Rising Innovation</h1>
+        <p>Transform your Business Digitally </p>
+    </div>
+    
+  
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('../assets/bg5.jpg');">
+                <div class="carousel-caption">
+                    <h5>Welcome to<span style="color: #b30000;"> RI</span> Technologies</h5>
+                    <p>Promote your Business to universe </p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('../assets/bg4.jpeg');">
+                <div class="carousel-caption">
+                    <h5>User user-friendly Development </h5>
+                    <p>Esay to connect with users</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('../assets/bg3.jpg');">
+                <div class="carousel-caption">
+                    <h5>Rise of AI Era</h5>
+                    <p>Introduce AI to your Business</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+<!--     about us company-->
+
+    <!-- About Us Section -->
+     <h2 id="about5" style="text-align: center; margin-top: 10px ;text-shadow: #666;">  About us</h2>
+     <div class="container">
+      
+    <div class="company-container">
+        <div class="image-container">
+            <img src="../assets/Rlogo.png" alt="Company Image">
+        </div>
+        <div class="content-container">
+            <h2>About </h2>
+            <p >
+              We are a leading firm in providing quality and value to our customers. 
+                Our mission is to innovate and inspire, delivering outstanding results 
+                through collaboration and integrity.</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap JS, Popper, and jQuery (for future JS effects) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+
+
+<!--    services part-->
+    <div class="s" id="service">
+<h1   style="text-align: center; color: #333; margin-top: 20px;">Our Services</h1>
+<div class="container-wrapper">
+    <div class="arrow" id="prev" onclick="scrollContainer(-1)">&lt;</div>
+    <div class="container" id="serviceContainer">
+        <!-- App Development Services -->
+        <div class="service-box" onmouseover="hoverEffect(this)" onmouseout="hoverOutEffect(this)">
+            <img src="../assets/app.avif" alt="Mobile App Development">
+            <div class="service-content">
+                <h3>Mobile App Development</h3>
+                <p>Building intuitive and user-friendly mobile applications for Android and iOS platforms.</p>
+            </div>
+        </div>
+        <div class="service-box" onmouseover="hoverEffect(this)" onmouseout="hoverOutEffect(this)">
+            <img src="../assets/ui.jpg" alt="UI/UX Design">
+            <div class="service-content">
+                <h3>UI/UX Design</h3>
+                <p>Crafting seamless and visually appealing designs for enhanced user experiences.</p>
+            </div>
+        </div>
+        <div class="service-box" onmouseover="hoverEffect(this)" onmouseout="hoverOutEffect(this)">
+            <img src="../assets/webdesign.jpg" alt="Gaming App Development">
+            <div class="service-content">
+                <h3>Gaming App Development</h3>
+                <p>Developing interactive and engaging gaming applications for various platforms.</p>
+            </div>
+        </div>
+       
+        <!-- Web Development Services -->
+        <div class="service-box" onmouseover="hoverEffect(this)" onmouseout="hoverOutEffect(this)">
+            <img src="../assets/app.avif" alt="Custom Web Development">
+            <div class="service-content">
+                <h3>Custom Web Development</h3>
+                <p>Developing tailor-made websites to meet specific business requirements.</p>
+            </div>
+        </div>
+        
+        <div class="service-box" onmouseover="hoverEffect(this)" onmouseout="hoverOutEffect(this)">
+            <img src="../assets/webdesign.jpg" alt="E-commerce Website Development">
+            <div class="service-content">
+                <h3>E-commerce Website Development</h3>
+                <p>Building robust e-commerce platforms with secure payment integration.</p>
+            </div>
+        </div>
+        
+    </div>
+    <div class="arrow" id="next" onclick="scrollContainer(1)">&gt;</div>
+</div>
+
+
+
+<!-- contact us details-->
+    <!-- Main Content -->
+    <div class="content" id="home">
+        <h1>Welcome to Our Company</h1>
+        <p>Explore our services and get in touch with us!</p>
+    </div>
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="text" id="mobile" placeholder="Mobile Number" required>
+                <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+   <!-- footer -->
+    
+
+    
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <!-- Address Section -->
+            <div class="footer-column">
+                <h3 >Address</h3>
+                <ul >
+                    <li><a href="#">Nellore</a></li>
+                    <li><a href="#">AP,India</a></li>
+                    <li><a href="#">ZIP Code 524234</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">Phone: +91 7702238496</a></li>
+                    <li><a href="#">Email: contact@Bytesfer.com</a></li>
+                    <li ><a href="#">Support: support@Bytesfer.com</a></li>
+                </ul>
+            </div>
+
+            <!-- Developer Section -->
+            <div class="footer-column">
+                <h3>Developers</h3>
+                <ul>
+                    <li><a href="#">Jagadeesh (Mern stack) </a></li>
+                    <li><a href="#">Praveen(Data Analyst)</a></li>
+                    <li><a href="#">Hema Chandra(Python Fullstack)</a></li>
+                    <li><a href="#">Madan(Devops Engineer)</a></li>
+                    <li><a href="https://manikumar-kancharla.github.io/Portfolio/main/index.html">Manikumar (Java Fullstack)</a></li>
+
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copy">
+            &copy; 2024    Rising Innovations. All rights reserved.
+        </div>
+    </footer>
+
+  
+
+
+<script>
+  
+   
+  function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            const content = document.getElementById("content");
+
+            navLinks.classList.toggle("open");
+            content.classList.toggle("adjusted");
+        }
+    function hoverEffect(element) {
+            element.style.backgroundColor = "#e0f7fa";
+            element.querySelector("h3").style.color = "#00796b";
+            element.querySelector("p").style.color = "#004d40";
+        }
+
+        function hoverOutEffect(element) {
+            element.style.backgroundColor = "white";
+            element.querySelector("h3").style.color = "#333";
+            element.querySelector("p").style.color = "#666";
+        }
+
+        function scrollContainer(direction) {
+            const container = document.getElementById("serviceContainer");
+            const scrollAmount = direction * 320; // Adjust scroll distance per service box width + margin
+            container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        }
+
+    
+                // JavaScript for dynamic effects
+                const links = document.querySelectorAll('.footer-column ul li a');
+
+// Hover effects: Adding animation and hover interaction
+links.forEach(link => {
+    link.addEventListener('mouseover', () => {
+        link.style.boxShadow = "0px 4px 6px rgba(0, 123, 255, 0.5)";
+    });
+
+    link.addEventListener('mouseout', () => {
+        link.style.boxShadow = "none";
+    });
+});
+
+</script>
+</body>
+</html>
